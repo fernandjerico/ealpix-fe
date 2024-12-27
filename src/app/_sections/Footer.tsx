@@ -7,10 +7,11 @@ import iconYoutube from "@/assets/icons/icon-youtube.svg";
 import { FooterItem } from "@/app/_components/FooterItem";
 import { FooterItemHeader } from "@/app/_components/FooterItemHeader";
 import { FooterSocialMedia } from "@/app/_components/FooterSocialMedia";
+import { Maxwidthdiv } from "@/components/Maxwidthdiv";
 
 export const Footer = () => {
   return (
-    <div className="px-20 py-6 bg-white flex-col gap-6 inline-flex w-full">
+    <Maxwidthdiv className="px-20 py-6 gap-6 bg-white flex flex-col w-full">
       <div className="sm:flex-col lg:flex-row flex justify-between items-center lg:items-start sm:gap-6">
         <div className="lg:w-1/4 w-full flex-col justify-start items-center lg:items-start gap-4 inline-flex">
           <Image
@@ -19,14 +20,14 @@ export const Footer = () => {
             height={40}
             className="sm:h-[46px] sm:w-[173px]"
           />
-          <p className="self-stretch text-secondary-text-color text-base font-medium leading-normal tracking-tight lg:text-start sm:text-center">
-            Experience personalized medical care from the comfort of your home.
+          <p className="self-stretch text-secondary-text-color text-base font-medium leading-normal tracking-tight lg:text-start sm:text-center lg:px-0 sm:px-8">
+            Pengalaman kontrol & awasi anak melalui smartphone anda
           </p>
         </div>
         <div className="flex-col justify-start sm:items-center gap-4 inline-flex lg:text-start sm:text-center">
           <FooterItemHeader text="Support" />
           <FooterItem href="#" text="Getting Started" />
-          <FooterItem href="#" text="FAQS" />
+          <FooterItem href="#faq" text="FAQS" />
           <FooterItem href="#" text="Help Articles" />
           <FooterItem href="#" text="Report an issue" />
           <FooterItem href="#" text="Contact Help Desk" />
@@ -64,6 +65,6 @@ export const Footer = () => {
           Ealpix 2024 © All Rights Reserved
         </div>
       </div>
-    </div>
+    </Maxwidthdiv>
   );
 };

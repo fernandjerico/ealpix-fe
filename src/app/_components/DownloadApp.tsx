@@ -1,14 +1,17 @@
+"use client";
 import Image from "next/image";
 import { useState } from "react";
-import iconWarningCircle from "@/assets/icons/icon-warning-circle.svg";
-import iconPlaystore from "@/assets/icons/icon-playstore.svg";
 
 export const DownloadApp = ({
   isOpen,
   onClose,
+  iconWarning,
+  iconPlaystore,
 }: {
   isOpen: boolean;
   onClose: () => void;
+  iconWarning: string;
+  iconPlaystore: string;
 }) => {
   const [activeTab, setActiveTab] = useState(0);
 
@@ -17,9 +20,9 @@ export const DownloadApp = ({
   const ParentContent = () => {
     return (
       <div className="py-2 px-4 flex flex-col items-center">
-        <div className="bg-primary-1-color rounded-lg p-3">
+        <div className="bg-primary-1-color rounded-lg p-3 w-full">
           <div className="flex flex-row gap-2">
-            <Image src={iconWarningCircle} alt="Warning" />
+            <Image src={iconWarning} alt="Warning" />
             <p className="text-primary-text-color text-base font-medium">
               Aplikasi untuk orang tua
             </p>
@@ -42,9 +45,9 @@ export const DownloadApp = ({
   const KidsContent = () => {
     return (
       <div className="py-2 px-4 flex flex-col items-center">
-        <div className="bg-primary-1-color rounded-lg p-3">
+        <div className="bg-primary-1-color rounded-lg p-3 w-full">
           <div className="flex flex-row gap-2">
-            <Image src={iconWarningCircle} alt="Warning" />
+            <Image src={iconWarning} alt="Warning" />
             <p className="text-primary-text-color text-base font-medium">
               Aplikasi untuk anak
             </p>
@@ -78,7 +81,7 @@ export const DownloadApp = ({
       className="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center z-50"
       onClick={onClose}>
       <div
-        className="bg-white rounded-xl p-6 w-5/6 lg:w-1/3 relative"
+        className="bg-white rounded-xl p-6 w-5/6 lg:w-1/3 xl:w-1/4 relative"
         onClick={(e) => e.stopPropagation()}>
         <div className="flex">
           {tabsContent.map((tab, index) => (
